@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import ProductCart from '../components/Productcart'
+import { axiosInstance } from '../config/axiosInstance'
 
 const HomePage = () => {
 
-  const [allProducts, setallProducts] = useState()
+  const [allProducts, setAllProducts] = useState()
 
   let fetchAllProducts = async ()=>{
     try {
-      let response = await axios.get("http://localhost:3000/api/products")
+      let response = await axiosInstance.get("/products");
       if(response){
-        setallProducts(response.data.products)
+        setAllProducts(response.data.products)
       }
       
     } catch (error) {
@@ -24,7 +24,6 @@ const HomePage = () => {
   },[])
   return (
     <div className="max-w-7xl mx-auto p-4">
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">Products</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {allProducts?.map((product) => (
           <ProductCart
