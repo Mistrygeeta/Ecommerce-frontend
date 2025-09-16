@@ -5,7 +5,7 @@ import Login from '../components/Login'
 const AuthPage = () => {
   const [flag, setFlag] = useState(false)
   return (
-    <div>
+    <div >
       {flag?(
         <Registration setFlag={setFlag}/>
       ):(

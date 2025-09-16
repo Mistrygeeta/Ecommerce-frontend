@@ -1,7 +1,4 @@
-import axios from "axios";
 import { axiosInstance } from "../config/axiosInstance";
-
-
 
 
 export const registerUser = async(data)=>{
@@ -28,4 +25,4 @@ export const loginUser = async(data)=>{
         console.log("error in login", error)
         
     }
-}
+};
