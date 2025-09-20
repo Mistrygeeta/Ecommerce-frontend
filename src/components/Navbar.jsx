@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <span onClick={()=>navigate("/")} className="text-xl font-bold text-blue-700 tracking-wide">
+            <span onClick={()=>navigate("/")} className="text-xl font-bold text-blue-700 cursor-pointer tracking-wide">
               E-comm
             </span>
           </div>

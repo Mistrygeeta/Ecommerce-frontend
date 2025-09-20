@@ -3,7 +3,7 @@ import {useDispatch, useSelector } from 'react-redux';
 import { useFetcher, useNavigate } from 'react-router'
 import { toast } from 'react-toastify';
 
-const ProtectedRoute = (children) => {
+const ProtectedRoute = ({children}) => {
     const navigate = useNavigate();
     const {user, isLoggedIn}= useSelector((state)=>state.auth);
 
@@ -15,4 +15,4 @@ const ProtectedRoute = (children) => {
   return isLoggedIn? <>{children}</>:""
 }
 
-export default ProtectedRoute
+export default ProtectedRoute;

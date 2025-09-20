@@ -4,15 +4,21 @@ import HomePage from '../pages/HomePage'
 import AuthPage from '../pages/AuthPage'
 import CartPage from '../pages/CartPage';
 import ProtectedRoute from '../components/ProtectedRoute';
+import Productdetails from '../pages/Productdetails';
 
 const AppRouter = () => {
   return (
     <Routes>
         <Route path ="/" element= {<HomePage/>}/>
         <Route path='/auth' element= {<AuthPage/>}/>
-        <Route path='/cart' element = {<ProtectedRoute><CartPage/></ProtectedRoute>}/>
+        <Route path = 'products/product-details/${id}' element={<Productdetails/>} />
+        <Route path='/cart' element = {
+          <ProtectedRoute>
+            <CartPage/>
+            </ProtectedRoute>
+          }/>
     </Routes>
   )
 };
 
-export default AppRouter
+export default AppRouter;

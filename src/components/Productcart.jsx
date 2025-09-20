@@ -1,8 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
-const ProductCart = ({ title, price, images }) => (
+
+const ProductCart = ({ title, price, images,id }) => {
+  const navigate = useNavigate();
+  return(
   <div className="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg transition-all duration-300 flex flex-col">
     <img
+    onClick={()=>navigate(`products/product-details/${id}`)}
       src={images}
       alt={title}
       className="h-48 w-full object-cover rounded-t-xl"
@@ -18,5 +23,5 @@ const ProductCart = ({ title, price, images }) => (
     </div>
   </div>
 );
-
+}
 export default ProductCart;
